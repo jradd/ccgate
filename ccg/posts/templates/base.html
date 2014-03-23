@@ -1,0 +1,28 @@
+{% extends "skeleton.html" %}
+
+{% block extra_head %}
+{% include "_layout/nav.html" %}
+{% endblock %}
+
+{% block site_wrapper %}
+<!-- end #menu -->  
+
+<div role="main">
+    {% block content %}
+
+    {% endblock content %}  
+</div>
+<div class="container">
+    {% block extra_content %}       
+    {% endblock extra_content %}      
+</div>
+    {% include 'tags/footer.html' %}     
+
+    {% block extra_page %}      
+    <!-- userrules -->
+    <!-- Mixpanel -->
+    <!-- Google Analytics -->
+    <!-- CrazyEgg -->
+    <!-- Begin Inspectlet Embed Code -->
+    {% endblock extra_page %}
+{% endblock site_wrapper %}

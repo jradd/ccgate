@@ -1,0 +1,42 @@
+from django.db.models import signals
+
+from tags.models import Tag
+
+
+def create_tags(app, created_models, **kwargs):
+    Tag.objects.get_or_create(name="Art")
+    Tag.objects.get_or_create(name="Bash")
+    Tag.objects.get_or_create(name="Debian")
+    Tag.objects.get_or_create(name="Design")
+    Tag.objects.get_or_create(name="Django")
+    Tag.objects.get_or_create(name="Electrical Engineering")
+    Tag.objects.get_or_create(name="Events")
+    Tag.objects.get_or_create(name="Events")
+    Tag.objects.get_or_create(name="Gaming")
+    Tag.objects.get_or_create(name="Git")
+    Tag.objects.get_or_create(name="Hack")
+    Tag.objects.get_or_create(name="Illustrator")
+    Tag.objects.get_or_create(name="InfoSec")
+    Tag.objects.get_or_create(name="Life")
+    Tag.objects.get_or_create(name="Linux")
+    Tag.objects.get_or_create(name="LXC")
+    Tag.objects.get_or_create(name="Movies")
+    Tag.objects.get_or_create(name="Music")
+    Tag.objects.get_or_create(name="OS X")
+    Tag.objects.get_or_create(name="Personal")
+    Tag.objects.get_or_create(name="Photography")
+    Tag.objects.get_or_create(name="Photoshop")
+    Tag.objects.get_or_create(name="PostgreSQL")
+    Tag.objects.get_or_create(name="Security")
+    Tag.objects.get_or_create(name="SQL")
+    Tag.objects.get_or_create(name="SysAdmin")
+    Tag.objects.get_or_create(name="Test")
+    Tag.objects.get_or_create(name="Tmux")
+    Tag.objects.get_or_create(name="Ubuntu")
+    Tag.objects.get_or_create(name="Universe")
+    Tag.objects.get_or_create(name="Virtualization")
+    Tag.objects.get_or_create(name="Web Development")
+    Tag.objects.get_or_create(name="Windows")
+    Tag.objects.get_or_create(name="Zsh")
+
+signals.post_syncdb.connect(create_tags, dispatch_uid=Tag)
